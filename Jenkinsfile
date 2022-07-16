@@ -8,6 +8,6 @@ node ("cloudev-server") {
         sh 'docker build -t ui-web .'
     }
     stage('Deploy') {
-        sh 'docker run -d -p 8080:8080 --name ui-web ui-web'
+        sh 'sudo docker run -d -p 3200:8080 --restart unless-stopped --name web web'
     }
 }
