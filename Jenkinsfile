@@ -1,8 +1,7 @@
 #! groovy
-node ("cloudev-server") {
+node {
     stage('code') {
-        
-        sh " git branch: 'main', url: 'https://github.com/cvsuneel/ui-web-app-reactjs.git' "
+        git branch: 'main', url: 'https://github.com/cvsuneel/ui-web-app-reactjs.git' "
     }
     stage('Build') {
         sh 'docker build -t ui-web .'
